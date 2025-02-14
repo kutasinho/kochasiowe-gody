@@ -1,0 +1,153 @@
+// style.css
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+:root {
+    --main-pink: #ff69b4;
+    --light-pink: #ffb6c1;
+    --dark-pink: #ff1493;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Pacifico', cursive;
+    background: var(--white);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+#loginForm {
+    background: var(--white);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+}
+
+.main-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.1);
+    opacity: 0;
+    transition: all 0.5s ease;
+    max-width: 90vw;
+    max-height: 90vh;
+    object-fit: contain;
+}
+
+.question-container {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 400px;
+    background: var(--white);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+.heart-progress {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80vw;
+    max-width: 800px;
+    height: 400px;
+    text-align: center;
+}
+
+.progress-container {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+}
+
+.heart-border {
+    width: 100%;
+    height: 100%;
+    background: url('heart-border.svg') no-repeat center;
+    background-size: contain;
+    position: relative;
+}
+
+#heartFill {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    background: var(--main-pink);
+    transition: height 0.5s ease;
+}
+
+.side-photo {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    transition: all 1s ease;
+}
+
+#leftPhoto {
+    left: 0;
+    transform: translateX(-100%);
+}
+
+#rightPhoto {
+    right: 0;
+    transform: translateX(100%);
+}
+
+.particle {
+    position: absolute;
+    pointer-events: none;
+    animation: particleAnimation 2s ease-out forwards;
+}
+
+@keyframes particleAnimation {
+    0% {
+        transform: translate(0, 0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(var(--tx), var(--ty)) scale(0);
+        opacity: 0;
+    }
+}
+
+.kiss-emoji {
+    position: fixed;
+    font-size: 2em;
+    animation: kissAnimation 2s ease-out forwards;
+}
+
+@keyframes kissAnimation {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50%, -250%) scale(3);
+        opacity: 0;
+    }
+}
