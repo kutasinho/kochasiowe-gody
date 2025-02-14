@@ -1,153 +1,93 @@
-// style.css
-@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
-
-:root {
-    --main-pink: #ff69b4;
-    --light-pink: #ffb6c1;
-    --dark-pink: #ff1493;
-    --white: #ffffff;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
+    font-family: 'Pacifico', cursive;
+    background-color: #fff;
+    color: #ff69b4;
+    text-align: center;
     margin: 0;
     padding: 0;
-    font-family: 'Pacifico', cursive;
-    background: var(--white);
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
 }
 
-#loginForm {
-    background: var(--white);
+#main-container {
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.1);
-    text-align: center;
-    width: 90%;
-    max-width: 400px;
 }
 
-.main-image {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(0.1);
-    opacity: 0;
-    transition: all 0.5s ease;
-    max-width: 90vw;
-    max-height: 90vh;
-    object-fit: contain;
+h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
 }
 
-.question-container {
-    display: none;
-    position: fixed;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 90%;
-    max-width: 400px;
-    background: var(--white);
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+#instruction {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
 }
 
-.heart-progress {
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 80vw;
-    max-width: 800px;
-    height: 400px;
-    text-align: center;
+#image-container {
+    margin: 20px auto;
+    width: 100px;
+    height: 100px;
+    transition: transform 0.5s;
 }
 
-.progress-container {
-    position: relative;
-    width: 200px;
-    height: 200px;
-    margin: 0 auto;
-}
-
-.heart-border {
+#main-image {
     width: 100%;
     height: 100%;
-    background: url('heart-border.svg') no-repeat center;
-    background-size: contain;
-    position: relative;
+    cursor: pointer;
 }
 
-#heartFill {
+#particles-js {
     position: absolute;
-    bottom: 0;
+    top: 0;
     left: 0;
     width: 100%;
-    height: 0%;
-    background: var(--main-pink);
-    transition: height 0.5s ease;
+    height: 100%;
+    z-index: -1;
 }
 
-.side-photo {
-    position: absolute;
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 50%;
-    transition: all 1s ease;
+.hidden {
+    display: none;
 }
 
-#leftPhoto {
-    left: 0;
-    transform: translateX(-100%);
+.question-box {
+    background-color: #fff;
+    border: 2px solid #ff69b4;
+    padding: 20px;
+    margin: 20px auto;
+    width: 80%;
+    max-width: 400px;
 }
 
-#rightPhoto {
-    right: 0;
-    transform: translateX(100%);
+.question-header {
+    background-color: #ff69b4;
+    color: #fff;
+    padding: 10px;
+    font-size: 1.2rem;
 }
 
-.particle {
-    position: absolute;
-    pointer-events: none;
-    animation: particleAnimation 2s ease-out forwards;
+#answerInput {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ff69b4;
 }
 
-@keyframes particleAnimation {
-    0% {
-        transform: translate(0, 0) scale(1);
-        opacity: 1;
-    }
-    100% {
-        transform: translate(var(--tx), var(--ty)) scale(0);
-        opacity: 0;
-    }
+button {
+    background-color: #ff69b4;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
 }
 
-.kiss-emoji {
-    position: fixed;
-    font-size: 2em;
-    animation: kissAnimation 2s ease-out forwards;
+button:hover {
+    background-color: #ff1493;
 }
 
-@keyframes kissAnimation {
-    0% {
-        transform: translate(-50%, -50%) scale(1);
-        opacity: 1;
-    }
-    100% {
-        transform: translate(-50%, -250%) scale(3);
-        opacity: 0;
-    }
+#certificate-container {
+    background-color: #ff69b4;
+    color: #fff;
+    padding: 20px;
+    margin: 20px auto;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 10px;
 }
