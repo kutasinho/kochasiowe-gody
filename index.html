@@ -1,0 +1,80 @@
+// index.html
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kochasiowe Gody</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <div id="loginForm">
+        <h2>Kochasiowe Gody</h2>
+        <input type="password" id="passwordInput" placeholder="Wprowadź hasło">
+        <button onclick="login()">Wejdź</button>
+    </div>
+
+    <div id="content" style="display: none;">
+        <h1 class="main-title">KOCHASIOWE GODY</h1>
+        <img src="./images/main-image.jpg" alt="Main Image" class="main-image" id="mainImage">
+        <div class="click-text" id="clickText">Dotknij ekranu, aby powiększyć...</div>
+    </div>
+
+    <div id="questionContainer" class="question-container">
+        <div class="question-header">
+            <h3 id="questionText"></h3>
+        </div>
+        <div class="question-content">
+            <input type="text" id="answerInput" placeholder="Twoja odpowiedź">
+            <button onclick="checkAnswer()">Sprawdź</button>
+        </div>
+        <button class="hint-button" onclick="showHint()">
+            <i class="fas fa-lightbulb"></i>
+        </button>
+    </div>
+
+    <div id="hintModal" class="hint-modal">
+        <h3>Podpowiedź</h3>
+        <p id="hintText"></p>
+        <div class="kiss-counter">Wymagana liczba kissów: <span id="requiredKisses">5</span></div>
+        <button onclick="closeHint()">OK</button>
+    </div>
+
+    <div id="heartProgress" class="heart-progress">
+        <div class="progress-container">
+            <div class="heart-border">
+                <div id="heartFill"></div>
+            </div>
+            <span id="progressText">0%</span>
+        </div>
+        <img id="leftPhoto" class="side-photo" src="./images/left-photo.jpg" alt="Left">
+        <img id="rightPhoto" class="side-photo" src="./images/right-photo.jpg" alt="Right">
+    </div>
+
+    <div id="certificate" class="certificate">
+        <h2>CERTYFIKAT KOCHASIA</h2>
+        <p class="date">Data: 14.02.2025</p>
+        <p class="place">Miejsce: Bebowice</p>
+        <div class="content">
+            <p>Gratulacje! Właśnie zostałaś certyfikowanym kochasiem!</p>
+            <p>Zdobyłaś wynik: <span id="finalScore">0</span>%</p>
+            <p>Z dniem 14.02.2025 masz pełne zezwolenia aby być bebem i kochasiem dużego beba.</p>
+            <p>Pamiętaj!!!! Bycie kochasiem wiąże się z dużą odpowiedzialnością.</p>
+        </div>
+        <div class="signatures">
+            <div class="signature-left">
+                <p>...............</p>
+                <p class="signature-desc">(podpis potwierdzenia bycia kochasiem oraz potwierdzenie odbioru certyfikatu)</p>
+            </div>
+            <div class="signature-right">
+                <p>ANANAS</p>
+                <p class="signature-desc">(podpis pełnoprawnego wysublimowanego potwierdzacza i specjalistę w sprawach certyfikatów i szkoleniowca od certyfikatów)</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
